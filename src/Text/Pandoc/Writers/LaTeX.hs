@@ -356,7 +356,7 @@ blockToLaTeX (Para [Image txt (src,'f':'i':'g':':':tit)]) = do
   return $ if inNote
               -- can't have figures in notes
               then "\\begin{center}" $$ img $+$ capt $$ "\\end{center}"
-              else "\\begin{figure}[htbp]" $$ "\\centering" $$ img $$
+              else "\\begin{figure}[]" $$ "\\centering" $$ img $$
                       ("\\caption" <> braces capt) $$ "\\end{figure}"
 -- . . . indicates pause in beamer slides
 blockToLaTeX (Para [Str ".",Space,Str ".",Space,Str "."]) = do
